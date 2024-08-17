@@ -26,3 +26,4 @@ function verificarUsuario(event) {
     xhr.open('POST', '../usuarios/login.php', true);
     xhr.send(formData);
 }
+
