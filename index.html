@@ -5,17 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto1</title>
-    <script src="../scripts/script.js" defer></script>
+    <script src="js/login.js" defer></script>
 </head>
 <body>
     <main>
-        <form action="usuarios/verificar.php" method="POST" class="formulario-login">
-            <div>
-                <input type="text" class="input-formulario" id="usuario" name="usuario" placeholder="Usuario" required>
-                <input type="password" class="input-formulario" id="password" name="password" placeholder="Contraseña" required>
-                <button type="submit" id="submitButton">Iniciar Sesión</button>
-            </div>
-        </form>
+        <section class="imagen">
+            
+        </section>
+        <section class="formulario">
+            <form action="usuarios/login.php" method="POST" class="formulario-login" id="formulario-login" onsubmit="verificarUsuario(event)">
+                <div>
+                    <input type="text" class="input-formulario" id="usuario" name="usuario" placeholder="Usuario" >
+                    <input type="password" class="input-formulario" id="password" name="password" placeholder="Contraseña" >
+                    <button type="submit" id="submitButton">Iniciar Sesión</button>
+                </div>
+            </form>
+        </section>
     </main>
 </body>
 </html>
