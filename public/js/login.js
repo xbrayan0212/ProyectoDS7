@@ -18,10 +18,11 @@ function verificarUsuario(event) {
             if (respuesta.success) {
                 alert(respuesta.mensaje);
             } else {
-                alert("Error: " + respuesta.mensaje);
+                var error = document.getElementById("mensajeError");
+                error.innerHTML = respuesta.mensaje;
             }
         }
     };
-    xhr.open('POST', 'usuarios/login.php', true);
+    xhr.open('POST', '../usuarios/login.php', true);
     xhr.send(formData);
 }

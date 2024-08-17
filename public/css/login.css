@@ -1,0 +1,146 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+:root {
+    --color-principal: #3498db; 
+    --color-secundario: #f8f8f8c2; 
+    --color-fondo: #ecf0f1;     
+    --color-texto: #2c3e50; 
+    --color-error: rgb(243, 8, 8);
+    --font1: "Roboto", sans-serif; 
+    --font2: "Lora", serif; 
+    --font3: "Fira Sans", sans-serif;        
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+}
+
+.contenedor_formulario {
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+.imagen {
+    height: 500px;
+    width: auto;
+    background-color: #2ecc71;
+}
+
+
+.logo {
+    display: flex;
+    text-align: center;
+    margin-bottom: 20px;
+    text-align: center;
+    width: max-content;
+    margin:  0 auto;
+}
+
+.logo img {
+    max-width: 100px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.formulario {
+    height: 500px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 0px 20px 20px 0 ;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: var(--color-secundario);
+    line-height: 60px;
+}
+.formulario h1 {
+    font-size: 2em;
+    color: #007bff;
+    font-family: var(--font1);
+}
+
+h2 {
+    font-family: var(--font2);
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+label{
+    border-radius: 5px;
+    height: 35px;
+    width: 100%;   
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.466); 
+    transition: box-shadow 0.3s ease; 
+    margin-bottom: 15px;
+    padding: 10px;
+}
+label img{
+    width: 24px;
+    height: 24px;
+    top: 8px;
+    margin-left: 10px;
+    position: relative;
+}
+.input-formulario{
+    margin: 0;
+    margin-top: -10px;
+    width: 200px;
+    height: 30px;
+    border: 0px ;
+    padding-left: 10px;
+    border-radius: 5px;
+    background-color: rgba(127, 255, 212, 0); 
+    transition: box-shadow 0.3s ease ; 
+    margin-bottom: 30px;
+    font-family: var(--font3);
+}
+label:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.493);
+}
+
+input:focus {
+    outline: none;
+    border: none;
+}
+
+button {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: var(--font3);
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.errorC{
+    font-size: 1.1em;
+    color: var(--color-error);
+}
+
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+    .imagen {
+        display: none;
+    }
+
+}
