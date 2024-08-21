@@ -10,4 +10,4 @@ Para mantener la claridad y consistencia en nuestros mensajes de commit, utiliza
 - **`test:`** Añade o modifica pruebas.
 - **`chore:`** Cambios en las tareas de mantenimiento (configuraciones, dependencias, etc.).
 
-Asegúrate de seguir estas convenciones al escribir tus mensajes de commit para ayudar a mantener un historial claro y organizado.
+
