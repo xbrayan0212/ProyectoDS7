@@ -20,10 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $response['success'] = true;
             if($tipo == 'A'){
                 $response['mensaje'] =  'administrador' . $tipo;
+                $response['redirect'] = 'views/administrador.html';
             }elseif ($tipo =='T') {
                 $response['mensaje'] = 'transacciones';
+                $response['redirect'] = 'views/transacciones.html';
             }elseif($tipo == 'C'){
                 $response['mensaje'] =  'Consulta';
+                $response['redirect'] = 'views/consultas.html';
             }
         } else {
             $response['success'] = false;

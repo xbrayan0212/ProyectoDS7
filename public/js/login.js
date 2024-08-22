@@ -16,7 +16,11 @@ function verificarUsuario(event) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var respuesta = JSON.parse(xhr.responseText);
             if (respuesta.success) {
-                alert(respuesta.mensaje);
+                if (respuesta.redirect) {
+                    window.location.href = respuesta.redirect;
+                } else {
+                    alert(respuesta.mensaje);
+                }
             } else {
                 var error = document.getElementById("mensajeError");
                 error.innerHTML = respuesta.mensaje;
@@ -26,3 +30,4 @@ function verificarUsuario(event) {
     xhr.open('POST', '../usuarios/login.php', true);
     xhr.send(formData);
 }
+
