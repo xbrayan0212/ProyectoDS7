@@ -12,16 +12,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $response['success'] = false;
         $response['mensaje'] =  'Por favor, complete todos los campos.';
     } else {
-        $sql = "SELECT * FROM usuario WHERE usuario = '$usuario' AND password = '$password'";
+        $sql = "SELECT * FROM usuario WHERE usuario = '$usuario'";
         $result = $conn->query($sql);
 
         if($result->num_rows > 0) {
             $row = $result->fetch_assoc();
+            $hashed_password = $row['password']; //hash a password
             $tipo = $row['tipo'];
-            $response['success'] = true;
-            $_SESSION['usuario'] = $usuario;
-            $_SESSION['tipo'] = $tipo;
-            $response['redirect'] = 'views/home.php';
+            if(password_verify($password, $hashed_password)){
+                $response['success'] = true;
+                $_SESSION['usuario'] = $usuario;
+                $_SESSION['tipo'] = $tipo;
+                $response['redirect'] = 'views/home.php';
+            } else {
+                $response['success'] = false;
+                $response['mensaje'] = 'Usuario o contraseña incorrectos';
+            }
+    
         }else{
             $response['success'] = false;
             $response['mensaje'] =  "Usuario o contraseña incorrectos";
