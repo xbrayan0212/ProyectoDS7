@@ -19,7 +19,7 @@ $tipo = $_SESSION['tipo'];
         <header>
             <?php include '../../includes/general/navbar.php'; ?>
         </header>
-        <main class="main">
+        <main class="main" id="mainContent">
             <?php if ($tipo === 'A'): ?>
             <?php elseif ($tipo === 'T'): ?>
             <?php elseif ($tipo === 'C'): ?>
@@ -30,4 +30,5 @@ $tipo = $_SESSION['tipo'];
         </footer>  
     </div>  
 </body>
+<script src="../js/scripts.js"></script>
 </html>
