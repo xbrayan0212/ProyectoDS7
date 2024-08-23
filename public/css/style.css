@@ -47,6 +47,7 @@ body {
 
 /* Menú de navegación */
 .nav {
+    background: var(--background-color);
     display: flex;
     gap: 20px;
 }
@@ -125,7 +126,7 @@ main{
         position: absolute;
         top: 100%;
         right: 0px;
-        background: linear-gradient(to bottom, rgba(var(--background-color-rgb), 0) 0%, var(--background-color) 100%);
+        background: var(--background-color);
         box-shadow: 0 4px 8px var(--shadow-color);
         padding: 30px 0;
     }
@@ -176,5 +177,175 @@ main{
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/* Estilos específicos para el formulario de cambio de contraseña */
+.container_password {
+    background-color: var(--background-color);
+    height: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--shadow-color);
+    width: 70%;
+    align-items: center; /* Centra verticalmente */
+    margin: 20px auto; /* Centra el formulario horizontalmente */
+}
+.form-cambio_password{
+    margin: auto;
+    margin-top: -35px;
+    max-width: 300px;
+    padding: 30px;
+}
+.container_password h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.container_password .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_password label {
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+.container_password input[type="password"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 100%;
+}
+
+.container_password input[type="password"]:focus {
+    border-color: var(--primary-color);
+}
+
+.container_password .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container_password .btn:hover {
+    background-color: #0056b3;
+}
+.img_password_cambio {
+    width: 100%; 
+    max-width: 250px; 
+    margin: 0 auto; 
+}
+
+.img_password_cambio img {
+    width: 100%;
+    height: auto; 
+    display: block;
+}
+.error_mensaje{
+    text-align: center;
+    padding: 10px;
+    color: var(--footer-background-color);
+    width: 50%;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+.errorMensajeNew{
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    margin: 5px auto;
+    font-size: 12px;
+    border-radius: 5px;
+    color: rgb(163, 10, 10);
+}
+@media (max-width: 480px) {
+    .container_password {
+        padding: 15px;
+    }
+
+    .container_password input[type="password"], 
+    .container_password .btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
+}
+
+.modal-content {
+    background-color: #ffffff; /* Fondo blanco */
+    margin: 15% auto; /* Centrar verticalmente */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Sombra elegante */
+    width: 80%;
+    max-width: 400px; /* Ancho máximo */
+    text-align: center; /* Centrar el texto */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content p {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.modal-content p::before {
+    content: "✔️";
+    display: block;
+    font-size: 24px;
+    color: #4CAF50; /* Color verde del check */
+    margin-bottom: 10px;
+}
+
+button.modal-button {
+    background-color: #4CAF50; /* Color verde del botón */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button.modal-button:hover {
+    background-color: #45a049; /* Cambiar color al pasar el ratón */
 }
 
