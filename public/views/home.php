@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['usuario'])) {
-    header('Location: ../views/transacciones.html'); 
+    header('Location: index.html'); 
     exit();
 }
 $tipo = $_SESSION['tipo'];
