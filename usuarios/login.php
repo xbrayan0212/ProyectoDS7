@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../db/conexion_usuario.php';
 
 $response = array();
@@ -18,14 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = $result->fetch_assoc();
             $tipo = $row['tipo'];
             $response['success'] = true;
-            if($tipo == 'A'){
-                $response['mensaje'] =  'administrador' . $tipo;
-            }elseif ($tipo =='T') {
-                $response['mensaje'] = 'transacciones';
-            }elseif($tipo == 'C'){
-                $response['mensaje'] =  'Consulta';
-            }
-        } else {
+            $_SESSION['usuario'] = $usuario;
+            $_SESSION['tipo'] = $tipo;
+            $response['redirect'] = 'views/home.php';
+        }else{
             $response['success'] = false;
             $response['mensaje'] =  "Usuario o contraseña incorrectos";
         }
