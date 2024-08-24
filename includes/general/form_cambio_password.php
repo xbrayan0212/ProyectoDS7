@@ -1,5 +1,6 @@
 
 <div class="container_password">
+    <section class="pass_conteiner">
     <h2>Cambiar Contraseña</h2>
     <div class="img_password_cambio">
         <img   src="../../public/imagenes/clave.png" alt="">
@@ -21,6 +22,8 @@
         </div>
         <button type="submit" class="btn">Cambiar Contraseña</button>
     </form>
+    </section>
+
     <div id="modalExito" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close">&times;</span>
