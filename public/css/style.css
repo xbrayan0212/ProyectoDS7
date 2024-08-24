@@ -4,6 +4,7 @@
         --text-color: #333;
         --background-color: #ffffff;
         --footer-background-color: #f0f1f3;
+        --form-background-color: rgba(255, 255, 255, 0.979);
         --shadow-color: rgba(0, 0, 0, 0.1);
         --font-family: Arial, sans-serif;
     }
@@ -180,290 +181,114 @@
         padding: 0 20px;
     }
 
-    /* Estilos específicos para el formulario de cambio de contraseña */
-    .container_password {
-        background-color: var(--background-color);
-        background-color: #0057b34f;
-        height: 100%;
+
+    /* Estilos específicos para los  formularios */
+    .containerForm {
+        display: flex;
+        flex-direction: column;
+        min-height: 70vh;
+        align-items: center
+    }
+    
+    .form-container {
+        background-color: var(--form-background-color);
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 0 10px var(--shadow-color);
-        width: 60%;
-        align-items: center; /* Centra verticalmente */
-        margin: 20px auto; /* Centra el formulario horizontalmente */
+        width: 90%;
+        height: 100%;
+        margin: 20px auto;
+        align-items: center
     }
-    .form-cambio_password{
+    .form_creat_user{
+        margin-top: 8%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .form-container h2 {
+        text-align: center;
+        color: var(--text-color);
+        margin-bottom: 20px;
+    }
+    
+    .img-container {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+        align-items: center
+    }
+    .img_container_create_user{
+        padding: 30px;
+        width: 100%;
+        min-width: 45%;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .img-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    .error-mensaje {
+        text-align: center;
+        padding: 10px;
+        color: var(--footer-background-color);
+        width: 100%;
+        font-size: 12px;
+        margin: 20px auto;
+        border-radius: 5px;
+        max-width: 300px;
+    }
+    #errorMensajeNew{
+        background-color: #0056b3;
+        color: white;
+    }
+    
+    .form {
         margin: auto;
         margin-top: -35px;
         max-width: 300px;
         padding: 30px;
         width: 80%;
     }
-    .pass_conteiner{
-        background-color: rgba(255, 255, 255, 0.979);
-        padding-top: 10px;
-        margin: 0 auto;
-        width: 100%;
-        border-radius: 5px;
-    }
-    .container_password h2 {
-        text-align: center;
-        color: var(--text-color);
-        margin-bottom: 20px;
-    }
-
-    .container_password .form-group {
+    
+    .form-group {
         margin-bottom: 15px;
         display: flex;
         flex-direction: column;
     }
-
-    .container_password label {
+    
+    .form-group label {
         margin-bottom: 5px;
         color: #555;
         font-size: 14px;
     }
-
-    .container_password input[type="password"] {
-        padding: 10px;
-        font-size: 16px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        outline: none;
-        width: 100%;
-    }
-
-    .container_password input[type="password"]:focus {
-        border-color: var(--primary-color);
-    }
-
-    .container_password .btn {
-        width: 100%;
-        padding: 10px;
-        background-color: var(--primary-color);
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .container_password .btn:hover {
-        background-color: #0056b3;
-    }
-    .img_password_cambio {
-        width: 100%; 
-        max-width: 250px; 
-        margin: 0 auto; 
-    }
-
-    .img_password_cambio img {
-        width: 100%;
-        height: auto; 
-        display: block;
-    }
-    .error_mensaje{
-        text-align: center;
-        padding: 10px;
-        color: var(--footer-background-color);
-        width: 50%;
-        margin: 20px auto;
-        border-radius: 5px;
-    }
-    .errorMensajeNew{
-        text-align: center;
-        padding: 10px;
-        width: 100%;
-        margin: 5px auto;
-        font-size: 12px;
-        border-radius: 5px;
-        color: rgb(163, 10, 10);
-    }
-    @media (max-width: 480px) {
-        .container_password {
-            padding: 15px;
-            width: 80%;
-        }
-
-        .container_password input[type="password"], 
-        .container_password .btn {
-            font-size: 14px;
-            padding: 8px;
-        }
-    }
-    .modal {
-        display: none; 
-        position: fixed; 
-        z-index: 1; 
-        left: 0;
-        top: 0;
-        width: 100%; 
-        height: 100%; 
-        overflow: auto; 
-        background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
-    }
-
-    .modal-content {
-        background-color: #ffffff; /* Fondo blanco */
-        margin: 15% auto; /* Centrar verticalmente */
-        padding: 20px;
-        border-radius: 10px; /* Bordes redondeados */
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Sombra elegante */
-        width: 80%;
-        max-width: 400px; /* Ancho máximo */
-        text-align: center; /* Centrar el texto */
-    }
-
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 24px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    .modal-content p {
-        font-size: 18px;
-        color: #333;
-        margin: 0;
-        padding: 10px 0;
-    }
-
-    .modal-content p::before {
-        content: "✔️";
-        display: block;
-        font-size: 24px;
-        color: #4CAF50; /* Color verde del check */
-        margin-bottom: 10px;
-    }
-
-    button.modal-button {
-        background-color: #4CAF50; /* Color verde del botón */
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        margin-top: 20px;
-    }
-
-    button.modal-button:hover {
-        background-color: #45a049; /* Cambiar color al pasar el ratón */
-    }
-
-    /* Estilos específicos para el formulario de creación de usuario */
-    .container_create_user {
-        display: flex;
-        padding: 20px;
-        background-color: var(--background-color);
-        border-radius: 8px;
-        box-shadow: 0 0 10px var(--shadow-color);
-        margin: 40px auto; 
-        max-width: 1400px;
-        height: 700px;
-        align-items: center; /* Alinea el contenido verticalmente */
-        background-color: #0057b333;
-        justify-content: center; /* Centra horizontalmente si es necesario */
-    }
-
-
-    .conteiner_user {
-        width: 40%;
-        padding: 20px;
-        box-sizing: border-box;
     
-    }
-
-    .h2_user_form {
-        text-align: center;
-        color: var(--text-color);
-        margin-bottom: 20px;
-    }
-
-    .img_create_user {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-        height: 100%;
-        width: 100%;
-    }
-
-    .img_create_user img {
-        width: 90%;
-        height: auto;
-    }
-
-    .section_form_user {
-        background-color: #fcfcfc9f;
-        width: 60%;
-        margin: 0;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column; /* Organiza los elementos en columna */
-        justify-content: center; /* Centra el formulario verticalmente */
-        height: 100%;
-        box-shadow: 0 0 10px var(--shadow-color);
-        
-    }
-
-    .form-create_user {
-        background-color: var(--background-color);
-        padding: 20px;
-        margin: 0 auto;
-        border-radius: 8px;
-        height: auto; /* Permite que el formulario ajuste su altura según el contenido */
-        max-height: 100%; /* Evita que el formulario exceda el contenedor */
-        width: 80%;
-    }
-    .form-group_user {
-        margin-bottom: 15px;
-    }
-
-    .form-group_user label {
-        display: block;
-        margin-bottom: 5px;
-        color: var(--text-color);
-        font-size: 14px;
-    }
-
-    .form-group_user input[type="text"],
-    .form-group_user input[type="password"],
-    .form-group_user select {
-        width: 100%;
+    .form-group input[type="password"],
+    .form-group input[type="text"],
+    .form-group select {
         padding: 10px;
         font-size: 16px;
         border-radius: 4px;
         border: 1px solid #ccc;
-        box-sizing: border-box;
         outline: none;
-        margin: 10px auto
+        width: 100%;
     }
-
-    .form-group_user input[type="text"]:focus,
-    .form-group_user input[type="password"]:focus,
-    .form-group_user select:focus {
+    
+    .form-group input[type="password"]:focus,
+    .form-group input[type="text"]:focus,
+    .form-group select:focus {
         border-color: var(--primary-color);
     }
-
-    .form-group_user .errorMensaje {
-        color: rgb(163, 10, 10);
-        font-size: 12px;
-        margin-top: 5px;
-    }
-
+    
     .btn {
-        display: inline-block;
-        padding: 10px 20px;
+        width: 100%;
+        padding: 10px;
         background-color: var(--primary-color);
         color: #fff;
         border: none;
@@ -471,39 +296,36 @@
         font-size: 16px;
         cursor: pointer;
         transition: background-color 0.3s ease;
-        text-align: center;
-        width: 100%;
-        margin: 30px 0
     }
-
+    
     .btn:hover {
         background-color: #0056b3;
     }
-
-    /* Modal de éxito */
+    
+    /* Modal */
     .modal {
-        display: none; 
-        position: fixed; 
-        z-index: 1; 
+        display: none;
+        position: fixed;
+        z-index: 1;
         left: 0;
         top: 0;
-        width: 100%; 
-        height: 100%; 
-        overflow: auto; 
-        background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
     }
-
+    
     .modal-content {
-        background-color: #ffffff; /* Fondo blanco */
-        margin: 15% auto; /* Centrar verticalmente */
+        background-color: var(--background-color);
+        margin: 15% auto;
         padding: 20px;
-        border-radius: 10px; /* Bordes redondeados */
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Sombra elegante */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         width: 80%;
-        max-width: 400px; /* Ancho máximo */
-        text-align: center; /* Centrar el texto */
+        max-width: 400px;
+        text-align: center;
     }
-
+    
     .close {
         color: #aaa;
         float: right;
@@ -511,49 +333,42 @@
         font-weight: bold;
         cursor: pointer;
     }
-
+    
     .close:hover,
     .close:focus {
         color: #000;
         text-decoration: none;
         cursor: pointer;
     }
-
+    
     .modal-content p {
         font-size: 18px;
         color: #333;
         margin: 0;
         padding: 10px 0;
     }
-
+    
     .modal-content p::before {
         content: "✔️";
         display: block;
         font-size: 24px;
-        color: #4CAF50; /* Color verde del check */
+        color: #4CAF50;
         margin-bottom: 10px;
     }
 
-    button.modal-button {
-        background-color: #4CAF50; /* Color verde del botón */
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        margin-top: 20px;
-    }
-
-    button.modal-button:hover {
-        background-color: #45a049; /* Cambiar color al pasar el ratón */
-    }
-    @media (max-width: 780px) {
-        .conteiner_user {
-            display: none;
+    @media (max-width: 768px) {
+        .form-container {
+            flex-direction: column;
+            align-items: center;
         }
-        .section_form_user {
+        
+        .img-container {
+            margin-bottom: 20px;
+        }
+        
+        .form {
+            margin-left: 0;
             width: 100%;
-            
+            margin: 0 auto;
         }
     }
