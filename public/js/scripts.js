@@ -8,54 +8,57 @@ function loadPage(page) {
         .catch(error => console.error('Error al cargar la página:', error));
 }
 
+function showError(message) {
+    const errorDiv = document.querySelector(".error-mensaje");
+    if (errorDiv) {
+        errorDiv.textContent = message;
+        errorDiv.style.backgroundColor = "rgb(180, 15, 15)";
+    }
+}
+
+function clearErrors() {
+    const errorDiv = document.querySelector(".error-mensaje");
+    if (errorDiv) {
+        errorDiv.textContent = "";
+        errorDiv.style.backgroundColor = "transparent";
+    }
+}
+
+function closeModal(modal, btnClose) {
+    if (btnClose) {
+        btnClose.onclick = () => modal.style.display = "none";
+    }
+    window.onclick = event => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+}
 
 function changePassword(event) {
     event.preventDefault();
+    const actualPassword = document.getElementById("actual_password").value.trim();
+    const newPassword = document.getElementById("new_password").value.trim();
+    const confirmPassword = document.getElementById("confirm_password").value.trim();
+    const modalExito = document.getElementById("modalExito");
+    const closeModalBtn = document.querySelector(".close");
 
-    var actual_password = document.getElementById("actual_password").value.trim();
-    var new_password = document.getElementById("new_password").value.trim();
-    var confirm_password = document.getElementById("confirm_password").value.trim();
+    clearErrors();
 
-    var errorMensajeDiv = document.querySelector(".error_mensaje");
-    var pass_new_error = document.querySelector(".errorMensajeNew");
-    var modalExito = document.getElementById("modalExito");
-    var closeModalBtn = document.querySelector(".close");
-
-    // Limpiar los mensajes de error anteriores
-    if (errorMensajeDiv) {
-        errorMensajeDiv.textContent = ""; 
-        errorMensajeDiv.style.backgroundColor = "transparent";
+    if (newPassword !== confirmPassword) {
+        showError("⚠️ Las contraseñas no coinciden.");
+        return;
     }
-    if (pass_new_error) {
-        pass_new_error.textContent = ""; 
-        pass_new_error.style.backgroundColor = "transparent";
-    }
-
-    // Validar que las contraseñas coinciden
-    if (new_password !== confirm_password) {
-        if (errorMensajeDiv) {
-            errorMensajeDiv.textContent = "⚠️ Las contraseñas no coinciden.";
-            errorMensajeDiv.style.backgroundColor = "rgb(180, 15, 15)";
-        }
+    if (newPassword.length < 8) {
+        showError("⚠️ La nueva contraseña debe tener más de 8 caracteres.");
         return;
     }
 
-    // Validar que las contraseñas tengan al menos 8 caracteres
-    if (confirm_password.length < 8 || new_password.length < 8) {
-        if (pass_new_error) {
-            pass_new_error.textContent = "⚠️ La contraseña debe tener más de 8 caracteres.";
-            pass_new_error.style.backgroundColor = "rgb(180, 15, 15)";
-        }
-        return;
-    }
+    const formData = new FormData();
+    formData.append('actual_password', actualPassword);
+    formData.append('new_password', newPassword);
+    formData.append('confirm_password', confirmPassword);
 
-    // Preparar los datos para enviar al servidor
-    var formData = new FormData();
-    formData.append('actual_password', actual_password);
-    formData.append('new_password', new_password);
-    formData.append('confirm_password', confirm_password);
-
-    // Enviar la solicitud al servidor
     fetch('../../usuarios/update_password.php', {
         method: 'POST',
         body: formData
@@ -63,85 +66,48 @@ function changePassword(event) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            // Mostrar el modal de éxito
             modalExito.style.display = "block";
-            // Limpiar los campos del formulario
             document.getElementById("actual_password").value = "";
             document.getElementById("new_password").value = "";
             document.getElementById("confirm_password").value = "";
         } else {
-            // Mostrar el mensaje de error
-            if (errorMensajeDiv) {
-                errorMensajeDiv.textContent = data.mensaje;
-                errorMensajeDiv.style.backgroundColor = "rgb(180, 15, 15)";
-            }
+            showError(data.mensaje);
         }
     })
-    .catch(error => {
-        console.error('Error:', error);
-        if (errorMensajeDiv) {
-            errorMensajeDiv.textContent = "⚠️ Ocurrió un error. Intente nuevamente.";
-            errorMensajeDiv.style.backgroundColor = "rgb(180, 15, 15)";
-        }
-    });
+    .catch(() => showError("⚠️ Ocurrió un error. Intente nuevamente."));
 
-    // Cerrar el modal cuando se hace clic en la "X"
-    closeModalBtn.onclick = function() {
-        modalExito.style.display = "none";
-    }
-
-    // Cerrar el modal cuando se hace clic fuera de él
-    window.onclick = function(event) {
-        if (event.target == modalExito) {
-            modalExito.style.display = "none";
-        }
-    }
+    closeModal(modalExito, closeModalBtn);
 }
 
-// Función para crear un nuevo usuario
 function createUser(event) {
     event.preventDefault();
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const confirmPassword = document.getElementById("confirm_password").value.trim();
+    const accountType = document.getElementById("account_type").value;
+    const modalExito = document.getElementById("modalExito");
+    const closeModalBtn = document.querySelector(".close");
 
-    var username = document.getElementById("username").value.trim();
-    var password = document.getElementById("password").value.trim();
-    var confirm_password = document.getElementById("confirm_password").value.trim();
-    var account_type = document.getElementById("account_type").value;
+    clearErrors();
 
-    var errorMensajeDiv = document.querySelector(".error_mensaje");
-    var modalExito = document.getElementById("modalExito");
-    var closeModalBtn = document.querySelector(".close");
-
-    // Limpiar los mensajes de error anteriores
-    if (errorMensajeDiv) {
-        errorMensajeDiv.textContent = ""; 
-        errorMensajeDiv.style.backgroundColor = "transparent";
+    if (username.length < 4) {
+        showError("⚠️ El usuario debe tener más de 4 caracteres.");
+        return;
     }
-
-    // Validar que las contraseñas coinciden
-    if (password !== confirm_password) {
-        if (errorMensajeDiv) {
-            errorMensajeDiv.textContent = "⚠️ Las contraseñas no coinciden.";
-            errorMensajeDiv.style.backgroundColor = "rgb(180, 15, 15)";
-        }
+    if (password !== confirmPassword) {
+        showError("⚠️ Las contraseñas no coinciden.");
+        return;
+    }
+    if (password.length < 8) {
+        showError("⚠️ La contraseña debe tener más de 8 caracteres.");
         return;
     }
 
-    // Validar que las contraseñas tengan al menos 8 caracteres
-    if (confirm_password.length < 8 || password.length < 8) {
-        if (errorMensajeDiv) {
-            errorMensajeDiv.textContent = "⚠️ La contraseña debe tener más de 8 caracteres.";
-            errorMensajeDiv.style.backgroundColor = "rgb(180, 15, 15)";
-        }
-        return;
-    }
-
-    // Preparar los datos 
-    var formData = new FormData();
+    const formData = new FormData();
     formData.append('username', username);
     formData.append('password', password);
-    formData.append('account_type', account_type);
+    formData.append('account_type', accountType);
 
-    // Enviar 
     fetch('../../usuarios/create_user.php', {
         method: 'POST',
         body: formData
@@ -149,37 +115,15 @@ function createUser(event) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            // Mostrar el modal de éxito
             modalExito.style.display = "block";
-            // Limpiar los campos del formulario
             document.getElementById("username").value = "";
             document.getElementById("password").value = "";
             document.getElementById("confirm_password").value = "";
         } else {
-            // Mostrar el mensaje de error
-            if (errorMensajeDiv) {
-                errorMensajeDiv.textContent = data.mensaje;
-                errorMensajeDiv.style.backgroundColor = "rgb(180, 15, 15)";
-            }
+            showError(data.mensaje);
         }
     })
-    .catch(error => {
-        console.error('Error:', error);
-        if (errorMensajeDiv) {
-            errorMensajeDiv.textContent = "⚠️ Ocurrió un error. Intente nuevamente.";
-            errorMensajeDiv.style.backgroundColor = "rgb(180, 15, 15)";
-        }
-    });
+    .catch(() => showError("⚠️ Ocurrió un error. Intente nuevamente."));
 
-    // Cerrar el modal cuando se hace clic en la "X"
-    closeModalBtn.onclick = function() {
-        modalExito.style.display = "none";
-    }
-
-    // Cerrar el modal cuando se hace clic fuera de él
-    window.onclick = function(event) {
-        if (event.target == modalExito) {
-            modalExito.style.display = "none";
-        }
-    }
+    closeModal(modalExito, closeModalBtn);
 }
