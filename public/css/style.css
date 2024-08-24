@@ -1,351 +1,559 @@
-/* Variables CSS */
-:root {
-    --primary-color: #007bff;
-    --text-color: #333;
-    --background-color: #ffffff;
-    --footer-background-color: #f8f9fa;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --font-family: Arial, sans-serif;
-}
-
-/* Estilos generales */
-body {
-    margin: 0;
-    font-family: var(--font-family);
-    display: flex;
-    flex-direction: column;
-}
-.page-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Header */
-.header {
-    background-color: var(--background-color);
-    box-shadow: 0 2px 4px var(--shadow-color);
-    padding: 20px 0;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Logotipo */
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-/* Menú de navegación */
-.nav {
-    background: var(--background-color);
-    display: flex;
-    gap: 20px;
-}
-
-.nav-link {
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 70px;
-}
-
-.nav-link:hover {
-    color: var(--primary-color);
-}
-
-/* Botón de menú para móviles */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-color);
-    display: block;
-}
-
-/* Menú desplegable del usuario */
-.user-info {
-    position: relative;
-}
-
-.user-dropdown {
-    display: none;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    width: max-content;
-    background-color: var(--background-color);
-    box-shadow: 0 2px 4px var(--shadow-color);
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 10;
-}
-
-.user-dropdown .nav-link {
-    display: block;
-    margin-bottom: 0px;
-    padding: 0;
-}
-
-.user-dropdown .nav-link:last-child {
-    margin-bottom: 0;
-}
-
-.user-info:hover .user-dropdown {
-    display: block;
-}
-.icon-user{
-    margin-bottom: -5px;
-}
-main{
-    flex: 1;
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
+    /* Variables CSS */
+    :root {
+        --primary-color: #007bff;
+        --text-color: #333;
+        --background-color: #ffffff;
+        --footer-background-color: #f0f1f3;
+        --shadow-color: rgba(0, 0, 0, 0.1);
+        --font-family: Arial, sans-serif;
     }
+
+    /* Estilos generales */
+    body {
+        margin: 0;
+        font-family: var(--font-family);
+        display: flex;
+        flex-direction: column;
+        background-color: #f5f0f0 ;
+    }
+    .page-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    /* Header */
+    .header {
+        background-color: var(--background-color);
+        box-shadow: 0 2px 4px var(--shadow-color);
+        padding: 20px 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Logotipo */
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--text-color);
+        text-decoration: none;
+    }
+
+    /* Menú de navegación */
     .nav {
+        background: var(--background-color);
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-link {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 70px;
+    }
+
+    .nav-link:hover {
+        color: var(--primary-color);
+    }
+
+    /* Botón de menú para móviles */
+    .menu-toggle {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 100%;
-        right: 0px;
-        background: var(--background-color);
-        box-shadow: 0 4px 8px var(--shadow-color);
-        padding: 30px 0;
+        gap: 4px;
+        cursor: pointer;
     }
-    .nav.nav-open {
-        position: absolute;
-        top: 70px;
-        width: 100%;
-        display: flex;
-        text-align: center;
+
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background-color: var(--text-color);
+        display: block;
     }
-    .nav-link {
-        margin-bottom: 10px;
+
+    /* Menú desplegable del usuario */
+    .user-info {
+        position: relative;
     }
+
     .user-dropdown {
         display: none;
-        left: 50%; 
-        transform: translateX(-50%); 
+        position: absolute;
+        right: 0;
         text-align: center;
         width: max-content;
+        background-color: var(--background-color);
+        box-shadow: 0 2px 4px var(--shadow-color);
         padding: 10px;
-        border-radius: 0px;
+        border-radius: 5px;
+        z-index: 10;
+    }
+
+    .user-dropdown .nav-link {
+        display: block;
+        margin-bottom: 0px;
+        padding: 0;
+    }
+
+    .user-dropdown .nav-link:last-child {
+        margin-bottom: 0;
+    }
+
+    .user-info:hover .user-dropdown {
+        display: block;
+    }
+    .icon-user{
+        margin-bottom: -5px;
+    }
+    main{
+        flex: 1;
+    }
+
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: flex;
+        }
+        .nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            right: 0px;
+            background: var(--background-color);
+            box-shadow: 0 4px 8px var(--shadow-color);
+            padding: 30px 0;
+        }
+        .nav.nav-open {
+            position: absolute;
+            top: 70px;
+            width: 100%;
+            display: flex;
+            text-align: center;
+        }
+        .nav-link {
+            margin-bottom: 10px;
+        }
+        .user-dropdown {
+            display: none;
+            left: 50%; 
+            transform: translateX(-50%); 
+            text-align: center;
+            width: max-content;
+            padding: 10px;
+            border-radius: 0px;
+            width: 100%;
+        }
+            .user-info {
+            justify-content: center; /* Alinea el círculo en el centro en dispositivos móviles */
+        }
+        
+        .user-dropdown {
+            display: none;
+            left: 0; /* Ajusta la posición en dispositivos móviles */
+            transform: none;
+            text-align: center;
+            width: 100%;
+            padding: 10px;
+            border-radius: 0;
+        }
+    }
+
+    /* Footer */
+    .footer {
+        background-color: var(--footer-background-color);
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 -2px 4px var(--shadow-color);
+    }
+
+    .footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Estilos específicos para el formulario de cambio de contraseña */
+    .container_password {
+        background-color: var(--background-color);
+        background-color: #0057b34f;
+        height: 100%;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px var(--shadow-color);
+        width: 60%;
+        align-items: center; /* Centra verticalmente */
+        margin: 20px auto; /* Centra el formulario horizontalmente */
+    }
+    .form-cambio_password{
+        margin: auto;
+        margin-top: -35px;
+        max-width: 300px;
+        padding: 30px;
+        width: 80%;
+    }
+    .pass_conteiner{
+        background-color: rgba(255, 255, 255, 0.979);
+        padding-top: 10px;
+        margin: 0 auto;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .container_password h2 {
+        text-align: center;
+        color: var(--text-color);
+        margin-bottom: 20px;
+    }
+
+    .container_password .form-group {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container_password label {
+        margin-bottom: 5px;
+        color: #555;
+        font-size: 14px;
+    }
+
+    .container_password input[type="password"] {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        outline: none;
         width: 100%;
     }
-        .user-info {
-        justify-content: center; /* Alinea el círculo en el centro en dispositivos móviles */
+
+    .container_password input[type="password"]:focus {
+        border-color: var(--primary-color);
     }
+
+    .container_password .btn {
+        width: 100%;
+        padding: 10px;
+        background-color: var(--primary-color);
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .container_password .btn:hover {
+        background-color: #0056b3;
+    }
+    .img_password_cambio {
+        width: 100%; 
+        max-width: 250px; 
+        margin: 0 auto; 
+    }
+
+    .img_password_cambio img {
+        width: 100%;
+        height: auto; 
+        display: block;
+    }
+    .error_mensaje{
+        text-align: center;
+        padding: 10px;
+        color: var(--footer-background-color);
+        width: 50%;
+        margin: 20px auto;
+        border-radius: 5px;
+    }
+    .errorMensajeNew{
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        margin: 5px auto;
+        font-size: 12px;
+        border-radius: 5px;
+        color: rgb(163, 10, 10);
+    }
+    @media (max-width: 480px) {
+        .container_password {
+            padding: 15px;
+            width: 80%;
+        }
+
+        .container_password input[type="password"], 
+        .container_password .btn {
+            font-size: 14px;
+            padding: 8px;
+        }
+    }
+    .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
+    }
+
+    .modal-content {
+        background-color: #ffffff; /* Fondo blanco */
+        margin: 15% auto; /* Centrar verticalmente */
+        padding: 20px;
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Sombra elegante */
+        width: 80%;
+        max-width: 400px; /* Ancho máximo */
+        text-align: center; /* Centrar el texto */
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .modal-content p {
+        font-size: 18px;
+        color: #333;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .modal-content p::before {
+        content: "✔️";
+        display: block;
+        font-size: 24px;
+        color: #4CAF50; /* Color verde del check */
+        margin-bottom: 10px;
+    }
+
+    button.modal-button {
+        background-color: #4CAF50; /* Color verde del botón */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    button.modal-button:hover {
+        background-color: #45a049; /* Cambiar color al pasar el ratón */
+    }
+
+    /* Estilos específicos para el formulario de creación de usuario */
+    .container_create_user {
+        display: flex;
+        padding: 20px;
+        background-color: var(--background-color);
+        border-radius: 8px;
+        box-shadow: 0 0 10px var(--shadow-color);
+        margin: 40px auto; 
+        max-width: 1400px;
+        height: 700px;
+        align-items: center; /* Alinea el contenido verticalmente */
+        background-color: #0057b333;
+        justify-content: center; /* Centra horizontalmente si es necesario */
+    }
+
+
+    .conteiner_user {
+        width: 40%;
+        padding: 20px;
+        box-sizing: border-box;
     
-    .user-dropdown {
-        display: none;
-        left: 0; /* Ajusta la posición en dispositivos móviles */
-        transform: none;
+    }
+
+    .h2_user_form {
+        text-align: center;
+        color: var(--text-color);
+        margin-bottom: 20px;
+    }
+
+    .img_create_user {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        height: 100%;
+        width: 100%;
+    }
+
+    .img_create_user img {
+        width: 90%;
+        height: auto;
+    }
+
+    .section_form_user {
+        background-color: #fcfcfc9f;
+        width: 60%;
+        margin: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column; /* Organiza los elementos en columna */
+        justify-content: center; /* Centra el formulario verticalmente */
+        height: 100%;
+        box-shadow: 0 0 10px var(--shadow-color);
+        
+    }
+
+    .form-create_user {
+        background-color: var(--background-color);
+        padding: 20px;
+        margin: 0 auto;
+        border-radius: 8px;
+        height: auto; /* Permite que el formulario ajuste su altura según el contenido */
+        max-height: 100%; /* Evita que el formulario exceda el contenedor */
+        width: 80%;
+    }
+    .form-group_user {
+        margin-bottom: 15px;
+    }
+
+    .form-group_user label {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--text-color);
+        font-size: 14px;
+    }
+
+    .form-group_user input[type="text"],
+    .form-group_user input[type="password"],
+    .form-group_user select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        outline: none;
+        margin: 10px auto
+    }
+
+    .form-group_user input[type="text"]:focus,
+    .form-group_user input[type="password"]:focus,
+    .form-group_user select:focus {
+        border-color: var(--primary-color);
+    }
+
+    .form-group_user .errorMensaje {
+        color: rgb(163, 10, 10);
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: var(--primary-color);
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
         text-align: center;
         width: 100%;
-        padding: 10px;
-        border-radius: 0;
-    }
-}
-
-/* Footer */
-.footer {
-    background-color: var(--footer-background-color);
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 -2px 4px var(--shadow-color);
-}
-
-.footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Estilos específicos para el formulario de cambio de contraseña */
-.container_password {
-    background-color: var(--background-color);
-    height: 100%;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px var(--shadow-color);
-    width: 70%;
-    align-items: center; /* Centra verticalmente */
-    margin: 20px auto; /* Centra el formulario horizontalmente */
-}
-.form-cambio_password{
-    margin: auto;
-    margin-top: -35px;
-    max-width: 300px;
-    padding: 30px;
-}
-.container_password h2 {
-    text-align: center;
-    color: var(--text-color);
-    margin-bottom: 20px;
-}
-
-.container_password .form-group {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-}
-
-.container_password label {
-    margin-bottom: 5px;
-    color: #555;
-    font-size: 14px;
-}
-
-.container_password input[type="password"] {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    outline: none;
-    width: 100%;
-}
-
-.container_password input[type="password"]:focus {
-    border-color: var(--primary-color);
-}
-
-.container_password .btn {
-    width: 100%;
-    padding: 10px;
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.container_password .btn:hover {
-    background-color: #0056b3;
-}
-.img_password_cambio {
-    width: 100%; 
-    max-width: 250px; 
-    margin: 0 auto; 
-}
-
-.img_password_cambio img {
-    width: 100%;
-    height: auto; 
-    display: block;
-}
-.error_mensaje{
-    text-align: center;
-    padding: 10px;
-    color: var(--footer-background-color);
-    width: 50%;
-    margin: 20px auto;
-    border-radius: 5px;
-}
-.errorMensajeNew{
-    text-align: center;
-    padding: 10px;
-    width: 100%;
-    margin: 5px auto;
-    font-size: 12px;
-    border-radius: 5px;
-    color: rgb(163, 10, 10);
-}
-@media (max-width: 480px) {
-    .container_password {
-        padding: 15px;
+        margin: 30px 0
     }
 
-    .container_password input[type="password"], 
-    .container_password .btn {
-        font-size: 14px;
-        padding: 8px;
+    .btn:hover {
+        background-color: #0056b3;
     }
-}
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
-}
 
-.modal-content {
-    background-color: #ffffff; /* Fondo blanco */
-    margin: 15% auto; /* Centrar verticalmente */
-    padding: 20px;
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Sombra elegante */
-    width: 80%;
-    max-width: 400px; /* Ancho máximo */
-    text-align: center; /* Centrar el texto */
-}
+    /* Modal de éxito */
+    .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
+    }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-}
+    .modal-content {
+        background-color: #ffffff; /* Fondo blanco */
+        margin: 15% auto; /* Centrar verticalmente */
+        padding: 20px;
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Sombra elegante */
+        width: 80%;
+        max-width: 400px; /* Ancho máximo */
+        text-align: center; /* Centrar el texto */
+    }
 
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+    }
 
-.modal-content p {
-    font-size: 18px;
-    color: #333;
-    margin: 0;
-    padding: 10px 0;
-}
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
 
-.modal-content p::before {
-    content: "✔️";
-    display: block;
-    font-size: 24px;
-    color: #4CAF50; /* Color verde del check */
-    margin-bottom: 10px;
-}
+    .modal-content p {
+        font-size: 18px;
+        color: #333;
+        margin: 0;
+        padding: 10px 0;
+    }
 
-button.modal-button {
-    background-color: #4CAF50; /* Color verde del botón */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-}
+    .modal-content p::before {
+        content: "✔️";
+        display: block;
+        font-size: 24px;
+        color: #4CAF50; /* Color verde del check */
+        margin-bottom: 10px;
+    }
 
-button.modal-button:hover {
-    background-color: #45a049; /* Cambiar color al pasar el ratón */
-}
+    button.modal-button {
+        background-color: #4CAF50; /* Color verde del botón */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+    }
 
+    button.modal-button:hover {
+        background-color: #45a049; /* Cambiar color al pasar el ratón */
+    }
+    @media (max-width: 780px) {
+        .conteiner_user {
+            display: none;
+        }
+        .section_form_user {
+            width: 100%;
+            
+        }
+    }
