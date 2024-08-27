@@ -1,7 +1,6 @@
 # ProyectoDS7
 
-Este es el proyecto **Desarrollo7**. En este proyecto se implementa un sistema de gestión de usuarios utilizando HTML, CSS, JavaScript y PHP. El proyecto también incluye la conexión a una base de datos MySQL para manejar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) de usuarios.
-
+El objetivo de este proyecto es crear un sistema de inventario utilizando PHP, incorporando la gestión de sesiones para controlar el acceso de usuarios según sus roles (Administrador , Consulta y Transacciones), asegurando la seguridad de las contraseñas mediante técnicas avanzadas como el hashing. Además, se implementará la carga dinámica de contenido , lo que permitirá mejorar la experiencia del usuario al actualizar contenido sin recargar completamente la página y facilitar la comunicación eficiente entre el cliente y el servidor.
 ## Estructura del Proyecto
 
 - **includes/**: Contiene archivos PHP utilizados para componentes comunes como el formulario de cambio de contraseña y la barra de navegación.
