@@ -1,14 +1,4 @@
-# Convenciones para Mensajes de Commit
 
-Para mantener la claridad y consistencia en nuestros mensajes de commit, utilizamos la siguiente nomenclatura:
-
-- **`feat:`** Añade una nueva característica.
-- **`fix:`** Corrige un error.
-- **`docs:`** Cambios en la documentación.
-- **`style:`** Cambios en el formato o estilo que no afectan el código (espacios, formato, etc.).
-- **`refactor:`** Cambios en el código que no corrigen errores ni añaden características.
-- **`test:`** Añade o modifica pruebas.
-- **`chore:`** Cambios en las tareas de mantenimiento (configuraciones, dependencias, etc.).
 
 Asegúrate de seguir estas convenciones al escribir tus mensajes de commit para ayudar a mantener un historial claro y organizado.
 # ProyectoDS7
@@ -27,12 +17,6 @@ Este es el proyecto **Desarrollo7**. En este proyecto se implementa un sistema d
   - **js/**: Scripts de JavaScript que manejan la lógica del frontend.
   
 - **usuarios/**: Contiene los scripts PHP que manejan las operaciones de usuario.
-  - **create_user.php**: Script para crear nuevos usuarios.
-  - **delete_users.php**: Script para eliminar usuarios existentes.
-  - **read_users.php**: Script para leer información de usuarios.
-  - **update_user.php**: Script para actualizar la información de los usuarios.
-  - **login.php**: Script para manejar el proceso de autenticación de usuarios.
-  - **logout.php**: Script para manejar la salida de usuarios del sistema.
 
 ## Requisitos
 
@@ -42,6 +26,17 @@ Este es el proyecto **Desarrollo7**. En este proyecto se implementa un sistema d
 
 ## Instalación
 
-1. Clona el repositorio en tu servidor local:
+ Clona el repositorio en tu servidor local:
    ```bash
    git clone https://github.com/xbrayan0212/ProyectoDS7.git
+# Convenciones para Mensajes de Commit
+
+Para mantener la claridad y consistencia en nuestros mensajes de commit, utilizamos la siguiente nomenclatura:
+
+- **`feat:`** Añade una nueva característica.
+- **`fix:`** Corrige un error.
+- **`docs:`** Cambios en la documentación.
+- **`style:`** Cambios en el formato o estilo que no afectan el código (espacios, formato, etc.).
+- **`refactor:`** Cambios en el código que no corrigen errores ni añaden características.
+- **`test:`** Añade o modifica pruebas.
+- **`chore:`** Cambios en las tareas de mantenimiento (configuraciones, dependencias, etc.).
