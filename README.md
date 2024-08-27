@@ -29,6 +29,7 @@ Este es el proyecto **Desarrollo7**. En este proyecto se implementa un sistema d
  Clona el repositorio en tu servidor local:
    ```bash
    git clone https://github.com/xbrayan0212/ProyectoDS7.git
+
 # Convenciones para Mensajes de Commit
 
 Para mantener la claridad y consistencia en nuestros mensajes de commit, utilizamos la siguiente nomenclatura:
