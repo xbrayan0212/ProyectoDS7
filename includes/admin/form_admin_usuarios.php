@@ -47,12 +47,10 @@
                        <!-- Campo oculto para el usuario actual -->
                        <input type="hidden" id="usuario" name="usuario" >
 
-                        <!-- Mostrar el nombre del usuario en un label no editable -->
-                        <label class="update_label">Usuario Actual: </label>
-                        <h3 id="usuario_mostrar" class="update_display"></h3>
+
 
                     <!-- Campo para el nuevo nombre de usuario -->
-                    <label for="nuevo_usuario" class="update_label">Nuevo Usuario:</label>
+                    <label for="nuevo_usuario" class="update_label">Usuario:</label>
                     <input type="text" id="nuevo_usuario" name="nuevo_usuario"  class="update_input">
 
                     <label for="tipo" class="update_label">Tipo:</label>
@@ -67,22 +65,6 @@
             </div>
         </div>
     </div>
-
-<div id="modalExito" class="modal" style="display: none;">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <p id="exitoMensaje"></p>
-    </div>
-</div>
-
-<div id="modalError" class="modal" style="display: none;">
-    <div class="modal-content modal-content-error">
-        <span class="close">&times;</span>
-        <p id="errorMensaje"></p>
-    </div>
-</div>
-
-
-
+    <?php include '../general/modals.php'; ?>
 
 <script src="../js/scripts.js"></script> 

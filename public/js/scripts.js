@@ -116,6 +116,7 @@ function createUser(event) {
     .then(data => {
         if (data.success) {
             modalExito.style.display = "block";
+            exitoMensaje.textContent = data.message; 
             document.getElementById("username").value = "";
             document.getElementById("password").value = "";
             document.getElementById("confirm_password").value = "";
@@ -198,7 +199,6 @@ function openUpdateModal(usuario, tipo) {
     const nuevoUsuario = document.getElementById("nuevo_usuario");
 
     // Rellena el formulario del modal con los valores del usuario seleccionado
-    usuarioMostrar.textContent = usuario;
     inputUsuario.value = usuario;
     selectTipo.value = tipo;
     nuevoUsuario.value = usuario;
@@ -229,7 +229,9 @@ function updateUser(event) {
     const nuevoUsuario = document.getElementById("nuevo_usuario").value.trim();
     const tipo = document.getElementById("tipo").value;
     const modalExito = document.getElementById("modalExito");
+    const exitoMensaje = document.getElementById("exitoMensaje");
     const closeModalBtn = document.querySelector(".close");
+    
 
     clearErrors();
 
@@ -250,10 +252,14 @@ function updateUser(event) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
+            console.log(data)
+            exitoMensaje.textContent = data.message; 
             modalExito.style.display = "block";
             document.getElementById("nuevo_usuario").value = "";
+            openUpdateModal(data.nuevo_usuario, data.tipo) 
+
         } else {
-            showError(data.mensaje);
+            showError(data.message);
         }
     })
     .catch(error => {

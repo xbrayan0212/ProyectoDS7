@@ -31,10 +31,5 @@
     </section>
 </div>
    
-<div id="modalExito" class="modal" style="display: none;">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>¡Acción realizada exitosamente!</p>
-    </div>
-</div>
+<?php include '../general/modals.php'; ?>
 <script src="../js/scripts.js"></script>
