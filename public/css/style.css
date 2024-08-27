@@ -305,7 +305,7 @@
     /* Modal */
     .modal {
         display: none;
-        position: fixed;
+        position: absolute;
         z-index: 1;
         left: 0;
         top: 0;
@@ -324,6 +324,7 @@
         width: 80%;
         max-width: 400px;
         text-align: center;
+        z-index: 5;
     }
     
     .close {
@@ -355,6 +356,13 @@
         color: #4CAF50;
         margin-bottom: 10px;
     }
+    .modal-content-error p::before {
+        content: "❌";
+        display: block;
+        font-size: 24px;
+        color: #4CAF50;
+        margin-bottom: 10px;
+    }
 
     @media (max-width: 768px) {
         .form-container {
@@ -372,3 +380,199 @@
             margin: 0 auto;
         }
     }
+
+    /*gestion de usuarios */
+/* Contenedor principal */
+.container_user {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 80%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.h1_users {
+    font-size: clamp(1.5rem, 4vw, 2.5rem); 
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.btn_create_user {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: clamp(0.875rem, 2vw, 1rem); 
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.btn_create_user:hover {
+    background-color: #0056b3;
+}
+
+.table_users {
+    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.247);
+}
+
+.table_users thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.th_users, .td_users {
+    padding: 12px 2px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: clamp(0.875rem, 1.5vw, 1rem); 
+    word-wrap: break-word;
+    word-break: break-all;
+    border: 1px solid rgba(0, 0, 0, 0.089);
+}
+
+.tr_users:hover {
+    background-color: #bebbbb;
+}
+
+.action-btns_user {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn_edit_user, .btn_delete_user {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem); 
+}
+
+.btn_edit_user {
+    background-color: #2196F3;
+}
+
+.btn_edit_user:hover {
+    background-color: #1e88e5;
+}
+
+.btn_delete_user {
+    background-color: #f44336;
+}
+
+.btn_delete_user:hover {
+    background-color: #e53935;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container_user {
+        padding: 15px;
+        margin-top: 20%;
+    }
+
+    .th_users, .td_users {
+        padding: 8px 4px;
+        font-size: clamp(0.75rem, 2vw, 1rem);
+    }
+
+    .action-btns_user {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+
+/* Título del modal */
+.update_title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Subtítulo del modal */
+.update_subtitle {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Labels del formulario */
+.update_label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Inputs del formulario */
+.update_input, .update_select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Botón de actualización */
+.update_button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Botón de cerrar */
+.modal_close {
+    position: relative;
+    top: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    left: 48%;
+}
+
+/* Estilo de oculto */
+.hidden {
+    display: none;
+}
+/* Botón de cerrar */
+.modal_close_update_update {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2em; /* Aumentar el tamaño de la fuente */
+    color: #333; /* Color del texto */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Transición para el color del texto */
+    padding: 5px; /* Añadir un poco de espaciado alrededor del icono */
+    border-radius: 50%; /* Hacer el área clicable más grande con bordes redondeados */
+    background: rgba(255, 255, 255, 0.8); /* Fondo blanco con algo de opacidad */
+}
+
+.modal_close_update_update:hover {
+    color: #ff0000; /* Color del texto al pasar el cursor */
+    background: rgba(255, 255, 255, 1); /* Fondo blanco completamente opaco */
+}
+
+/*.modal-content_update{
+    background-color: var(--background-color);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}*/
