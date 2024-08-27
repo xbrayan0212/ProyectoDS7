@@ -7,9 +7,10 @@
             <span></span>
         </div>
         <nav class="nav" id="nav-menu">
-            <a href="#" class="nav-link">Inicio</a>
+        <a href="#" class="nav-link" onclick="location.reload(); return false;">Inicio</a>
             <?php if ($tipo === 'A'): ?>
-                       <a href="#" class="nav-link"  onclick="loadPage('../../includes/admin/form_create_user.php')">Crear Usuario</a>
+                       <a href="#" class="nav-link"  onclick="loadPage('../../includes/admin/form_admin_usuarios.php')">Gestion de Usuarios</a>
+
                    <?php endif; ?>
             <div class="user-info" id="user-info">
                <img class="icon-user" src="../../public/imagenes/icons8-user-24.png" alt="hola"> <a class="nav-link" id="user-name"><?php echo htmlspecialchars($_SESSION['usuario']); ?></a>
