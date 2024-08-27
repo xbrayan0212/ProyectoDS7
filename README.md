@@ -17,7 +17,17 @@ Este es el proyecto **Desarrollo7**. En este proyecto se implementa un sistema d
   - **js/**: Scripts de JavaScript que manejan la lógica del frontend.
   
 - **usuarios/**: Contiene los scripts PHP que manejan las operaciones de usuario.
+# Convenciones para Mensajes de Commit
 
+Para mantener la claridad y consistencia en nuestros mensajes de commit, utilizamos la siguiente nomenclatura:
+
+- **`feat:`** Añade una nueva característica.
+- **`fix:`** Corrige un error.
+- **`docs:`** Cambios en la documentación.
+- **`style:`** Cambios en el formato o estilo que no afectan el código (espacios, formato, etc.).
+- **`refactor:`** Cambios en el código que no corrigen errores ni añaden características.
+- **`test:`** Añade o modifica pruebas.
+- **`chore:`** Cambios en las tareas de mantenimiento (configuraciones, dependencias, etc.).
 ## Requisitos
 
 - Servidor web compatible con PHP (como Apache o Nginx).
@@ -30,14 +40,4 @@ Este es el proyecto **Desarrollo7**. En este proyecto se implementa un sistema d
    ```bash
    git clone https://github.com/xbrayan0212/ProyectoDS7.git
 
-# Convenciones para Mensajes de Commit
 
-Para mantener la claridad y consistencia en nuestros mensajes de commit, utilizamos la siguiente nomenclatura:
-
-- **`feat:`** Añade una nueva característica.
-- **`fix:`** Corrige un error.
-- **`docs:`** Cambios en la documentación.
-- **`style:`** Cambios en el formato o estilo que no afectan el código (espacios, formato, etc.).
-- **`refactor:`** Cambios en el código que no corrigen errores ni añaden características.
-- **`test:`** Añade o modifica pruebas.
-- **`chore:`** Cambios en las tareas de mantenimiento (configuraciones, dependencias, etc.).
