@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../db/conexion_usuario.php';
+require_once '../db/conexion_usuario.php';
 
 $response = array();
 

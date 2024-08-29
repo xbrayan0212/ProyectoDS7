@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../db/conexion_usuario.php';
+require_once '../db/conexion_usuario.php';
 
 $response = array();
 
@@ -23,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $response['success'] = true;
                 $_SESSION['usuario'] = $usuario;
                 $_SESSION['tipo'] = $tipo;
+                $_SESSION['time'] = time();
                 $response['redirect'] = 'views/home.php';
             } else {
                 $response['success'] = false;
